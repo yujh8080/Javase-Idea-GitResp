@@ -9,12 +9,13 @@ import java.awt.*;
  * @Description: cn.sjxy
  * @version: 1.0
  */
+//子弹的实体类
 public class Bullet {
-    private static final int SPEED=10;
+    private static final int SPEED=10;//速度
 
-    private int x,y;
-    private  Dir dir;
-    private static int WIDTH=30,HEIGHT=30;
+    private int x,y;//初始位置
+    private  Dir dir;//方向
+    private static int WIDTH=30,HEIGHT=30;//大小
 
     public Bullet(int x, int y, Dir dir) {
         this.x = x;
@@ -22,6 +23,7 @@ public class Bullet {
         this.dir = dir;
     }
 
+    //子弹画自己的方法
     public void paint(Graphics g) {
         Color c=g.getColor();
         g.setColor(Color.RED);
@@ -29,6 +31,7 @@ public class Bullet {
         move();
 
     }
+    //移动的方法（这里没有静止的判断）
     private void move() {
         switch (dir) {
             case LEFT:

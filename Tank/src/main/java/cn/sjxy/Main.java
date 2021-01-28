@@ -12,7 +12,8 @@ import java.awt.event.WindowEvent;
  */
 public class Main {
     public static void main(String[] args) throws InterruptedException{
-       TankFrame tf=new TankFrame();
+       TankFrame tf=new TankFrame();//新建主战坦克对象
+        //设置每50ms就重新渲染画面
        while(true){
            Thread.sleep(50);
            tf.repaint();

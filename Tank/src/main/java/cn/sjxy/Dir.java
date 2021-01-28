@@ -6,6 +6,7 @@ package cn.sjxy;
  * @Description: cn.sjxy
  * @version: 1.0
  */
+//方向的枚举类（四个方向）
 public enum Dir {
     LEFT,UP,RIGHT,DOWN
 }
