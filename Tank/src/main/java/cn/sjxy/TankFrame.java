@@ -5,6 +5,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Auther: yujh
@@ -14,7 +16,7 @@ import java.awt.event.WindowEvent;
  */
 public class TankFrame extends Frame {
     Tank myTank=new Tank(200,200,Dir.DOWN,this);//坦克对象
-    Bullet b=new Bullet(300,300,Dir.DOWN);//子弹对象
+    List<Bullet> bullets=new ArrayList<Bullet>();
     static final int GAME_WIDTH=800,GAME_HEIGHT=600;
     //初始化界面
     public TankFrame() {
@@ -55,8 +57,14 @@ public class TankFrame extends Frame {
     //画出坦克和子弹
     @Override
     public void paint(Graphics g) {
+        Color c=g.getColor();
+        g.setColor(Color.WHITE);
+        g.drawString("子弹数量:"+bullets.size(),10,60);
+        g.setColor(c);
         myTank.paint(g);
-        b.paint(g);
+        for(int i=0;i<bullets.size();i++){
+            bullets.get(i).paint(g);
+        }
     }
 
     //处理对键盘的监听
