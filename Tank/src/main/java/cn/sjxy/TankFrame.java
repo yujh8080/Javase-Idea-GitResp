@@ -13,7 +13,7 @@ import java.awt.event.WindowEvent;
  * @version: 1.0
  */
 public class TankFrame extends Frame {
-    Tank myTank=new Tank(200,200,Dir.DOWN);//坦克对象
+    Tank myTank=new Tank(200,200,Dir.DOWN,this);//坦克对象
     Bullet b=new Bullet(300,300,Dir.DOWN);//子弹对象
     static final int GAME_WIDTH=800,GAME_HEIGHT=600;
     //初始化界面
@@ -85,6 +85,9 @@ public class TankFrame extends Frame {
                     break;
                 case KeyEvent.VK_DOWN:
                     bD = true;
+                    break;
+                case KeyEvent.VK_CONTROL:
+                    myTank.fire();
                     break;
                 default:
                     break;

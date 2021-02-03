@@ -15,6 +15,7 @@ public class Tank {
     private static final int SPEED=5;//速度
     private boolean moving=false;//开始定义为静止状态
 
+    private TankFrame tf=null;
     public Dir getDir() {
         return dir;
     }
@@ -30,11 +31,12 @@ public class Tank {
         this.moving = moving;
     }
 
-    public Tank(int x, int y, Dir dir) {
+    public Tank(int x, int y, Dir dir,TankFrame tf) {
         super();
         this.x = x;
         this.y = y;
         this.dir = dir;
+        this.tf=tf;
     }
     //画坦克的方法
     //画坦克的时候确定是否需要移动
@@ -65,5 +67,11 @@ public class Tank {
                 y+=SPEED;
                 break;
         }
+
+
+    }
+
+    public void fire() {
+      tf.b =new Bullet(this.x,this.y,this.dir);
     }
 }
