@@ -39,7 +39,10 @@ public class Tank {
     //画坦克的方法
     //画坦克的时候确定是否需要移动
     public void paint(Graphics g) {
+        Color c=g.getColor();
+        g.setColor(Color.GREEN);
         g.fillRect(x, y, 50, 50);
+        g.setColor(c);
         move();
 
     }

@@ -15,9 +15,10 @@ import java.awt.event.WindowEvent;
 public class TankFrame extends Frame {
     Tank myTank=new Tank(200,200,Dir.DOWN);//坦克对象
     Bullet b=new Bullet(300,300,Dir.DOWN);//子弹对象
+    static final int GAME_WIDTH=800,GAME_HEIGHT=600;
     //初始化界面
     public TankFrame() {
-        setSize(800, 600);
+        setSize(GAME_WIDTH, GAME_HEIGHT);
         setResizable(false);
         setTitle("tank war");
         setVisible(true);
@@ -31,6 +32,24 @@ public class TankFrame extends Frame {
                 System.exit(0);
             }
         });
+    }
+
+    //双缓冲解决画面闪烁问题
+    //先把图片画到内存里，再用画笔将内存里的图片全部画到屏幕上
+   Image offScreenImage=null;//在内存里定义一张图片
+
+    @Override
+    public void update(Graphics g) {
+        if(offScreenImage==null){
+            offScreenImage=this.createImage(GAME_WIDTH,GAME_HEIGHT);//创建图片
+        }
+        Graphics gOffScreen=offScreenImage.getGraphics();
+        Color c=gOffScreen.getColor();
+        gOffScreen.setColor(Color.BLACK);
+        gOffScreen.fillRect(0,0,GAME_WIDTH,GAME_HEIGHT);
+        gOffScreen.setColor(c);
+        paint(gOffScreen);
+        g.drawImage(offScreenImage,0,0,null);
     }
 
     //画出坦克和子弹
