@@ -13,6 +13,10 @@ public class Tank {
     private int x,y;//初始位置
     private Dir dir=Dir.DOWN;//初始方向
     private static final int SPEED=5;//速度
+
+    public  static int WIDTH=ResourceMgr.tankD.getWidth();
+    public  static int HEIGHT=ResourceMgr.tankD.getHeight();
+
     private boolean moving=false;//开始定义为静止状态
 
     private TankFrame tf=null;
@@ -41,10 +45,22 @@ public class Tank {
     //画坦克的方法
     //画坦克的时候确定是否需要移动
     public void paint(Graphics g) {
-        Color c=g.getColor();
-        g.setColor(Color.GREEN);
-        g.fillRect(x, y, 50, 50);
-        g.setColor(c);
+        switch (dir){
+            case LEFT:
+                g.drawImage(ResourceMgr.tankL,x,y,null);
+                break;
+            case UP:
+                g.drawImage(ResourceMgr.tankU,x,y,null);
+            break;
+            case RIGHT:
+                g.drawImage(ResourceMgr.tankR,x,y,null);
+                break;
+            case DOWN:
+                g.drawImage(ResourceMgr.tankD,x,y,null);
+                break;
+        }
+
+      //  g.drawImage(ResourceMgr.tankL,x,y,null);
         move();
 
     }
@@ -72,6 +88,8 @@ public class Tank {
     }
 
     public void fire() {
-      tf.bullets.add(new Bullet(this.x,this.y,this.dir,this.tf));
+         int bX=this.x+Tank.WIDTH/2-Bullet.WIDTH;
+         int bY=this.y+Tank.HEIGHT/2-Bullet.HEIGHT/2;
+        tf.bullets.add(new Bullet(bX,bY,this.dir,this.tf));
     }
 }
