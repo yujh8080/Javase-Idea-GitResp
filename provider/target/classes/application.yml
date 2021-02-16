@@ -2,9 +2,15 @@ dubbo:
   application:
     name: dubbo-provider
   registry:
+<<<<<<< HEAD
     address: zookeeper://192.168.182.131:2181
 
 # 加载其他配置文件,加载其他application-*.yml文件，多个名称之间使用逗号分隔
 spring:
   profiles:
     active: mybatis
+=======
+    address: zookeeper://192.168.182.130:2181
+  protocol:
+    port: 20884
+>>>>>>> fcee530d15d67f07d42de0055b6e4027942c6e97

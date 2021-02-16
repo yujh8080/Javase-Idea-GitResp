@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.sjxy</groupId>
+<<<<<<< HEAD
     <artifactId>Parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
@@ -17,12 +18,33 @@
         <module>emp</module>
     </modules>
 
+=======
+    <artifactId>DubboParent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <modules>
+        <module>api</module>
+        <module>provider</module>
+        <module>cunsumer</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.10.RELEASE</version>
+    </parent>
+
+>>>>>>> fcee530d15d67f07d42de0055b6e4027942c6e97
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
+<<<<<<< HEAD
                 <version>2.1.10.RELEASE</version>
+=======
+                <version>2.1.10.RELEASE</version>                  
+>>>>>>> fcee530d15d67f07d42de0055b6e4027942c6e97
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -30,11 +52,14 @@
                 <version>2.1.10.RELEASE</version>
             </dependency>
             <dependency>
+<<<<<<< HEAD
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-thymeleaf</artifactId>
                 <version>2.1.10.RELEASE</version>
             </dependency>
             <dependency>
+=======
+>>>>>>> fcee530d15d67f07d42de0055b6e4027942c6e97
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-spring-boot-starter</artifactId>
                 <version>2.7.3</version>
@@ -49,6 +74,7 @@
                 <artifactId>curator-framework</artifactId>
                 <version>4.2.0</version>
             </dependency>
+<<<<<<< HEAD
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -64,6 +90,8 @@
                 <artifactId>commons-io</artifactId>
                 <version>2.6</version>
             </dependency>
+=======
+>>>>>>> fcee530d15d67f07d42de0055b6e4027942c6e97
         </dependencies>
     </dependencyManagement>
 

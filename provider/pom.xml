@@ -3,7 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
+<<<<<<< HEAD
         <artifactId>Parent</artifactId>
+=======
+        <artifactId>DubboParent</artifactId>
+>>>>>>> fcee530d15d67f07d42de0055b6e4027942c6e97
         <groupId>com.sjxy</groupId>
         <version>1.0.0</version>
     </parent>
@@ -15,15 +19,22 @@
 
     <dependencies>
         <dependency>
+<<<<<<< HEAD
             <artifactId>mapper</artifactId>
             <groupId>com.sjxy</groupId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
+=======
+>>>>>>> fcee530d15d67f07d42de0055b6e4027942c6e97
             <artifactId>api</artifactId>
             <groupId>com.sjxy</groupId>
             <version>1.0.0</version>
         </dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> fcee530d15d67f07d42de0055b6e4027942c6e97
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -40,7 +51,11 @@
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-framework</artifactId>
         </dependency>
+<<<<<<< HEAD
 
     </dependencies>
 
+=======
+    </dependencies>
+>>>>>>> fcee530d15d67f07d42de0055b6e4027942c6e97
 </project>
